@@ -21,17 +21,23 @@ define({
 					this.set('currentPage', currentPage + 1);
 				}
 			},
+
 			prevPage: function() {
 				var currentPage = this.get('currentPage');
 				if (currentPage > 1) {
 					this.set('currentPage', currentPage - 1);
 				}
 			},
+
 			setPage: function(page) {
 				page = parseInt(page, 10);
 				if (page && page > 0 && page <= this.get('nbPages')) {
 					this.set('currentPage', page);
 				}
+			},
+
+			currentContent: function() {
+				return "---------- Content FOR PAGE " + this.get('currentPage') + " ----------";
 			}
 		});
 
@@ -55,6 +61,9 @@ define({
 				if (doc.id) {
 					return doc.toJSON();	
 				}
+			},
+			getCurrentContent: function() {
+				return doc.currentContent();
 			}
 		};
 

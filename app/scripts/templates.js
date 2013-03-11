@@ -70,8 +70,19 @@ function program3(depth0,data) {
 this["Handlebars"]["templates"]["viewport/viewport"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
-  
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "<h1>Content</h1>\n\n";
+  buffer += "<h1>"
+    + escapeExpression(((stack1 = ((stack1 = depth0.doc),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</h1>\n\n<p>";
+  if (stack2 = helpers.content) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.content; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</p>\n\n<footer>Page "
+    + escapeExpression(((stack1 = ((stack1 = depth0.doc),stack1 == null || stack1 === false ? stack1 : stack1.currentPage)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " / "
+    + escapeExpression(((stack1 = ((stack1 = depth0.doc),stack1 == null || stack1 === false ? stack1 : stack1.nbPages)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</footer>\n\n";
+  return buffer;
   });
