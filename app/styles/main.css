@@ -1,0 +1,18 @@
+[data-aura-widget="toolbar"] {
+    width: 500px;
+    height: 30px;
+    border: 1px solid #999;
+}
+
+[data-aura-widget="toolbar"] * {
+    float: left;
+    margin: auto;
+}
+
+[data-aura-widget="viewport"]  {
+    clear: both;
+    border: 1px solid #999;
+    width: 500px;
+    height: 700px;
+}
+
