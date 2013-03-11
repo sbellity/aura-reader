@@ -7,8 +7,8 @@ define({
 
 		var Document = Backbone.Model.extend({
 			defaults: {
-				currentPage: 0,
-				nbPages: 0
+				currentPage: 1,
+				nbPages: 1
 			},
 
 			initialize: function() {
@@ -17,7 +17,7 @@ define({
 
 			nextPage: function() {
 				var currentPage = this.get('currentPage');
-				if (currentPage <= this.get('nbPages')) {
+				if (currentPage < this.get('nbPages')) {
 					this.set('currentPage', currentPage + 1);
 				}
 			},
@@ -40,7 +40,7 @@ define({
 
 		mediator.on('reader.page.set', 		doc.setPage);
 		mediator.on('reader.page.next', 	doc.nextPage);
-		mediator.on('reader.page.prev', 	doc.nextPage);
+		mediator.on('reader.page.prev', 	doc.prevPage);
 		mediator.on('reader.doc.reset', function(attrs) {
 			doc.set(attrs);
 		});

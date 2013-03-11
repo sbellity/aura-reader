@@ -16,13 +16,14 @@ define(['components/aura/lib/aura'], function(Aura, test) {
 	/** A possible configuration data object */
 	var config = {
 		reader: {
-			id: 				1980648,
-			productId: 	2002904,
-			nbPages: 		28,
-			name: 			"Super Doc",
-			mode: 			"",
-			display: 		"infinite",
-			q: 					""
+			id: 					1980648,
+			productId: 		2002904,
+			currentPage: 	1,
+			nbPages: 			28,
+			name: 				"Super Doc",
+			mode: 				"",
+			display: 			"infinite",
+			q: 						""
 		}
 	};
 
