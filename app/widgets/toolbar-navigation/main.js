@@ -1,6 +1,8 @@
 define(['underscore', 'hbs!./toolbar'], function(_, template) {
-	return {
 
+	'use strict';
+
+	return {
 		initialize: function() {
 
 			this.validCurrentPage = 0;
@@ -32,23 +34,23 @@ define(['underscore', 'hbs!./toolbar'], function(_, template) {
 		},
 
 		previousPage: function() {
-			console.log('[WIDGET:toolbar-navigation] input previous page click');
+			this.sandbox.log('[WIDGET:toolbar-navigation] input previous page click');
 			this.sandbox.navigation.changePage('-');
 		},
 
 		nextPage: function() {
-			console.log('[WIDGET:toolbar-navigation] input next page click');
+			this.sandbox.log('[WIDGET:toolbar-navigation] input next page click');
 			this.sandbox.navigation.changePage('+');
 		},
 
 		changeCurrentPage: function(e) {
-			console.log('[WIDGET:toolbar-navigation] input keyUp fired : ' + e.target.value);
+			this.sandbox.log('[WIDGET:toolbar-navigation] input keyUp fired : ' + e.target.value);
 			if (!this.sandbox.navigation.changePage(e.target.value))
 				this.$currentPage.val(this.validCurrentPage);	
 		},
 
 		setCurrentPage: function(pageNumber) {
-			console.log('[WIDGET:toolbar-navigation] changePage received : ' + pageNumber);
+			this.sandbox.log('[WIDGET:toolbar-navigation] changePage received : ' + pageNumber);
 			this.$currentPage.val(pageNumber);
 			this.validCurrentPage = pageNumber;
 		}

@@ -1,6 +1,8 @@
 define(['underscore', 'hbs!./reader'], function(_, template) {
-	return {
 
+	'use strict';
+
+	return {
 		initialize: function() {
 			
 			_.bindAll(this);

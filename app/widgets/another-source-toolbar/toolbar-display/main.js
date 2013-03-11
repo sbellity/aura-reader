@@ -1,5 +1,5 @@
 define(['underscore', 'hbs!./toolbar'], function(_, template) {
-
+	
 	'use strict';
 
 	return {

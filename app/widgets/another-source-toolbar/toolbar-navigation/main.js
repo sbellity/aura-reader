@@ -1,11 +1,9 @@
-define(['module', 'underscore', 'hbs!./toolbar'], function(module, _, template) {
+define(['underscore', 'hbs!./toolbar'], function(_, template) {
 	
 	'use strict';
-
+	
 	return {
 		initialize: function() {
-
-//			this.sandbox.log(module.config()); /** Why my config is empty ? :/ */
 
 			this.validCurrentPage = 0;
 
@@ -36,23 +34,23 @@ define(['module', 'underscore', 'hbs!./toolbar'], function(module, _, template) 
 		},
 
 		previousPage: function() {
-			this.sandbox.log('[WIDGET:toolbar-navigation-require] input previous page click');
+			this.sandbox.log('[WIDGET:toolbar-navigation] input previous page click');
 			this.sandbox.navigation.changePage('-');
 		},
 
 		nextPage: function() {
-			this.sandbox.log('[WIDGET:toolbar-navigation-require] input next page click');
+			this.sandbox.log('[WIDGET:toolbar-navigation] input next page click');
 			this.sandbox.navigation.changePage('+');
 		},
 
 		changeCurrentPage: function(e) {
-			this.sandbox.log('[WIDGET:toolbar-navigation-require] input keyUp fired : ' + e.target.value);
+			this.sandbox.log('[WIDGET:toolbar-navigation] input keyUp fired : ' + e.target.value);
 			if (!this.sandbox.navigation.changePage(e.target.value))
 				this.$currentPage.val(this.validCurrentPage);	
 		},
 
 		setCurrentPage: function(pageNumber) {
-			this.sandbox.log('[WIDGET:toolbar-navigation-require] changePage received : ' + pageNumber);
+			this.sandbox.log('[WIDGET:toolbar-navigation] changePage received : ' + pageNumber);
 			this.$currentPage.val(pageNumber);
 			this.validCurrentPage = pageNumber;
 		}

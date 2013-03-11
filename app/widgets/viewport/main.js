@@ -1,4 +1,7 @@
-define(['underscore', 'text!./viewport.tmp'], function(_, template) {
+define(['underscore', 'hbs!./viewport'], function(_, template) {
+
+	'use strict';
+
 	return {
 		initialize: function() {
 			_.bindAll(this);

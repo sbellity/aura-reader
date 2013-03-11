@@ -1,4 +1,7 @@
-define(['underscore', 'text!./toolbar.tmp'], function(_, template) {
+define(['underscore', 'hbs!./toolbar'], function(_, template) {
+
+	'use strict';
+
 	return {
 		initialize: function() {
 			this.render();

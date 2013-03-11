@@ -1,10 +1,10 @@
-[data-aura-widget="toolbar"] {
+[data-aura-widget="toolbar"], [data-aura-widget="toolbar@another-source-toolbar"] {
     width: 500px;
     height: 30px;
     border: 1px solid #999;
 }
 
-[data-aura-widget="toolbar"] * {
+[data-aura-widget="toolbar"] *, [data-aura-widget="toolbar@another-source-toolbar"] * { 
     float: left;
     margin: auto;
 }
