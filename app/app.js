@@ -15,18 +15,21 @@ define(['components/aura/lib/aura'], function(Aura, test) {
 	
 	/** A possible configuration data object */
 	var config = {
-		documentId:1980648,
-		productId: 2002904,
-/*		nbPage: 28,*/
-		mode: "",
-		display: "infinite",
-		q: ""
+		reader: {
+			id: 				1980648,
+			productId: 	2002904,
+			nbPages: 		28,
+			name: 			"Super Doc",
+			mode: 			"",
+			display: 		"infinite",
+			q: 					""
+		}
 	};
 
 	Aura(config)
 	.use('extensions/aura-handlebars')
-	.use('extensions/aura-reader-navigation')
-	.registerWidgetsSource('another-source-toolbar', 'widgets/another-source-toolbar')
+	.use('extensions/aura-backbone')
+	.use('extensions/aura-reader')
 	.use(function (app) {
 		window.reader = app.createSandbox();
 	})

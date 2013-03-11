@@ -1,15 +1,16 @@
-define(['underscore', 'hbs!./toolbar'], function(_, template) {
+define(['hbs!./toolbar'], function(template) {
 
 	'use strict';
 
 	return {
 		initialize: function() {
 			this.render();
+      this.sandbox.on('reader.doc.reset', _.bind(this.render, this));
 		},
 
 		render: function() {
-			this.html(template( { 'navigation' : this.options.navigation,
-				'nbPage' : this.options.nbPage } ) );   
+      var doc = this.sandbox.reader.getCurrentDoc();
+			this.html(template({ doc: doc }));
 		}
 	};
 });
